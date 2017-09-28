@@ -891,3 +891,500 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/tasks" for 127.0.0.1 at 2017-09-28 16:40:48 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/tasks"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-28 16:40:51 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 310ms (Views: 281.0ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-28 16:40:55 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (29.8ms)
+  Rendered books/new.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 81ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-28 16:41:07 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"roS5SDd56SAZ9otZ0vPkYJIRQCD18F4s9k+fUeMpiHDkCJXfUDGucxnLKD8igitGr0uxwswk6DiZjn08/bTHPQ==", "book"=>{"title"=>"Game of Thrones Book 1 ", "description"=>"GOT ", "author"=>"G RR Martin "}, "commit"=>"Create Book"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "description", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Game of Thrones Book 1 "], ["description", "GOT "], ["author", "G RR Martin "], ["created_at", "2017-09-28 20:41:07.658092"], ["updated_at", "2017-09-28 20:41:07.658092"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 16:41:07 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-09-28 16:41:10 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-09-28 16:41:13 -0400
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sc7Vb2c7eY9rbSrwECiE9W1qTvHRsTzWVPYtdb9jsEZBQIrlMkgQoOxxO3Bsru8lYsHSgUeUiVyA6aHnc23VXA==", "id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 16:41:13 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-28 16:41:16 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (11.2ms)
+  Rendered books/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-28 16:41:56 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d+HrCq1TPYr3blU5Gf9BgQQU356PXyori4ja99VtS+A9bcedyht62fdT9l/pjo6nOU4ufLaLnD/kSTiay/AErQ==", "book"=>{"title"=>"Prince of Tides ", "description"=>"Lorem yippiyo dolor phat amizzle, get down get down adipiscing elit. Away boofron velit, shizznit volutpizzle, suscipizzle yo mamma, we gonna chung vel, izzle. Fo mofo tortor. Sed . Break yo neck, yall izzle pot dapibus dang tempus tempizzle. Mauris yo mamma nibh et turpis. Nizzle nizzle tortizzle. Pellentesque brizzle rhoncus nisi. Mah nizzle fo shizzle crunk platea dictumst. Ghetto shiznit. Curabitur tellus shut the shizzle up, pretizzle eu, mattizzle gizzle, eleifend vitae, nunc. Go to hizzle suscipizzle. Integizzle sempizzle velizzle sed fo shizzle.", "author"=>"Pat Conroy"}, "commit"=>"Create Book"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "description", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Prince of Tides "], ["description", "Lorem yippiyo dolor phat amizzle, get down get down adipiscing elit. Away boofron velit, shizznit volutpizzle, suscipizzle yo mamma, we gonna chung vel, izzle. Fo mofo tortor. Sed . Break yo neck, yall izzle pot dapibus dang tempus tempizzle. Mauris yo mamma nibh et turpis. Nizzle nizzle tortizzle. Pellentesque brizzle rhoncus nisi. Mah nizzle fo shizzle crunk platea dictumst. Ghetto shiznit. Curabitur tellus shut the shizzle up, pretizzle eu, mattizzle gizzle, eleifend vitae, nunc. Go to hizzle suscipizzle. Integizzle sempizzle velizzle sed fo shizzle."], ["author", "Pat Conroy"], ["created_at", "2017-09-28 20:41:56.385776"], ["updated_at", "2017-09-28 20:41:56.385776"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 16:41:56 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-28 16:42:01 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (5.4ms)
+  Rendered books/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-28 16:42:24 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ve+nTXsTwfm21Mttn57MZUgtF3VHbDZJ5GchbyDDI8EfY4vaHFuGqrbpaAtv7wNDdXfml364gF2LpsMCPl5sjA==", "book"=>{"title"=>"Steve Jobs ", "description"=>"Praesent doggy turpizzle fo shizzle leo bibendum molestie. Vivamizzle vestibulizzle dang vel massa. Quisque malesuada crazy mammasay mammasa mamma oo sa. Bling bling sure, pot bling bling that's the shizzle egestizzle, magna crazy vestibulum ligula, stuff uhuh ... yih! justo we gonna chung quizzle boofron. Shizznit daahng dawg elizzle boom shackalack amizzle erizzle adipiscing sagittis. Pizzle phat pede izzle lacus. Fizzle rhoncizzle bow wow wow leo. Lorem ipsum dolor sizzle pot, consectetizzle ghetto elizzle. Stuff black we gonna chung, posuere sit amet, ass sizzle, crunk mattis, libero. Curabitur semper faucibus i saw beyonces tizzles and my pizzle went crizzle. Ut non ma nizzle. Nunc sed ass a dizzle accumsizzle for sure. Quisque fo metizzle laorizzle pot. Fo shizzle sodalizzle, cool quis dizzle that's the shizzle, boom shackalack diam commodo felizzle, nec ullamcorper erizzle nisl quis nisi. Fo shizzle leo quam, dope sizzle amet, phat go to hizzle, its fo rizzle pulvinizzle, sizzle.", "author"=>"Some Guy "}, "commit"=>"Create Book"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "description", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Steve Jobs "], ["description", "Praesent doggy turpizzle fo shizzle leo bibendum molestie. Vivamizzle vestibulizzle dang vel massa. Quisque malesuada crazy mammasay mammasa mamma oo sa. Bling bling sure, pot bling bling that's the shizzle egestizzle, magna crazy vestibulum ligula, stuff uhuh ... yih! justo we gonna chung quizzle boofron. Shizznit daahng dawg elizzle boom shackalack amizzle erizzle adipiscing sagittis. Pizzle phat pede izzle lacus. Fizzle rhoncizzle bow wow wow leo. Lorem ipsum dolor sizzle pot, consectetizzle ghetto elizzle. Stuff black we gonna chung, posuere sit amet, ass sizzle, crunk mattis, libero. Curabitur semper faucibus i saw beyonces tizzles and my pizzle went crizzle. Ut non ma nizzle. Nunc sed ass a dizzle accumsizzle for sure. Quisque fo metizzle laorizzle pot. Fo shizzle sodalizzle, cool quis dizzle that's the shizzle, boom shackalack diam commodo felizzle, nec ullamcorper erizzle nisl quis nisi. Fo shizzle leo quam, dope sizzle amet, phat go to hizzle, its fo rizzle pulvinizzle, sizzle."], ["author", "Some Guy "], ["created_at", "2017-09-28 20:42:24.372312"], ["updated_at", "2017-09-28 20:42:24.372312"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 16:42:24 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-28 16:42:27 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.7ms)
+  Rendered books/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-28 16:42:51 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7k7zTxy/L1TiFR6HieN2CWH0WmQWQY2tyJ+GcfYVFZekwt/Ye/doB+IoveF5krkvXK6rhi+VO7mnXmQc6Iha2g==", "book"=>{"title"=>"POODR", "description"=>"Sizzle dizzle black izzle arcu ultricies consequizzle. Tellivizzle convallizzle, yippiyo izzle dope posuere, sizzle crazy mammasay mammasa mamma oo sa pede, brizzle blandizzle black dolizzle sizzle velizzle. Fo shizzle mah nizzle fo rizzle, mah home g-dizzle izzle dang nizzle shut the shizzle up varizzle hizzle. Curabitizzle turpis nisi, pulvinar izzle, dang eleifend, tincidunt izzle, metus. Nunc sizzle neque. Lorem ipsum doggy sizzle gizzle, consectetizzle crazy . Phat izzle elit. In own yo'. Vestibulizzle izzle erizzle uhuh ... yih! velizzle aliquizzle phat. In facilisis nisi sizzle amet nibh. Fo commodo. Gizzle eu ante go to hizzle neque lacinia for sure. Aenizzle we gonna chung massa sizzle uhuh ... yih! the bizzle lobortizzle. Suspendisse enim sheezy, bibendum rizzle, ornare brizzle, imperdiet the bizzle, phat. Fizzle boofron dizzle izzle nizzle adipiscing dang. Curabitizzle pimpin' nisl quis check it out da bomb nonummy.", "author"=>"Sandi Metz"}, "commit"=>"Create Book"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "description", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "POODR"], ["description", "Sizzle dizzle black izzle arcu ultricies consequizzle. Tellivizzle convallizzle, yippiyo izzle dope posuere, sizzle crazy mammasay mammasa mamma oo sa pede, brizzle blandizzle black dolizzle sizzle velizzle. Fo shizzle mah nizzle fo rizzle, mah home g-dizzle izzle dang nizzle shut the shizzle up varizzle hizzle. Curabitizzle turpis nisi, pulvinar izzle, dang eleifend, tincidunt izzle, metus. Nunc sizzle neque. Lorem ipsum doggy sizzle gizzle, consectetizzle crazy . Phat izzle elit. In own yo'. Vestibulizzle izzle erizzle uhuh ... yih! velizzle aliquizzle phat. In facilisis nisi sizzle amet nibh. Fo commodo. Gizzle eu ante go to hizzle neque lacinia for sure. Aenizzle we gonna chung massa sizzle uhuh ... yih! the bizzle lobortizzle. Suspendisse enim sheezy, bibendum rizzle, ornare brizzle, imperdiet the bizzle, phat. Fizzle boofron dizzle izzle nizzle adipiscing dang. Curabitizzle pimpin' nisl quis check it out da bomb nonummy."], ["author", "Sandi Metz"], ["created_at", "2017-09-28 20:42:51.590377"], ["updated_at", "2017-09-28 20:42:51.590377"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 16:42:51 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 16:46:30 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8707068881384709255)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20170928205721)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170928205721"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8707068881384709255)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-28 16:58:04 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 351ms (Views: 332.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 17:09:24 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 17:09:27 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 17:09:27 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 17:13:56 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 17:21:09 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:21: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+.append=( if user_signed_in? );@output_buffer.safe_append='
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:22: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:23: syntax error, unexpected keyword_else
+e;@output_buffer.append=( else);@output_buffer.safe_append='
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end
+                       ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:21: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:22: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:23: syntax error, unexpected keyword_else
+app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 17:21:20 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:21: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+.append=( if user_signed_in? );@output_buffer.safe_append='
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:22: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:23: syntax error, unexpected keyword_else
+e;@output_buffer.append=( else);@output_buffer.safe_append='
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end
+                       ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:21: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:22: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:23: syntax error, unexpected keyword_else
+app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 17:23:39 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:23: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+.append=( if user_signed_in? );@output_buffer.safe_append='
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;             else
+                          ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end
+                       ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:23: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_else, expecting ')'
+app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 17:24:05 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;             else
+                          ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end
+                       ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_else, expecting ')'
+app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 17:26:44 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;             else
+                          ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end
+                       ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:24: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:25: syntax error, unexpected keyword_else, expecting ')'
+app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 17:26:57 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end
+                       ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 17:27:03 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+sion_path, method: :delete,  );@output_buffer.safe_append='<
+                              ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;           end
+                       ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/tanjastroble/Desktop/breakweek-work/books/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:26: syntax error, unexpected ')'
+app/views/layouts/application.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 17:28:02 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-09-28 17:41:11 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8707068881384709255)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToBooks (20170928214346)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "books" ADD "user_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170928214346"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8707068881384709255)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
