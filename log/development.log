@@ -17,3 +17,177 @@ Migrating to CreateBooks (20170928124400)
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8707068881384709255)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-28 10:09:46 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 2890ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/config
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/images
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/node_modules
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>BookReview</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4054589117192354386_70361033354040'
+Started GET "/" for 127.0.0.1 at 2017-09-28 10:09:53 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/config
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/images
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/node_modules
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>BookReview</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4054589117192354386_70361056089500'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 10:10:03 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/config
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/images
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/node_modules
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>BookReview</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4054589117192354386_70361107559740'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 10:15:42 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 1597ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/config
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/images
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/node_modules
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>BookReview</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2967841917243431699_70288153957680'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 10:15:44 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/config
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/images
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/app/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/tanjastroble/Desktop/breakweek-work/books/node_modules
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/tanjastroble/.rvm/gems/ruby-2.4.0/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>BookReview</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2967841917243431699_70288208024600'
+Started GET "/books" for 127.0.0.1 at 2017-09-28 10:16:10 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 666ms (Views: 664.7ms | ActiveRecord: 0.0ms)
+
+
